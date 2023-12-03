@@ -4,3 +4,40 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --back-color: #000;
+    --from-color: rgba(0, 127, 12, 1);
+    --before-color: rgba(0, 67, 6, 1);
+    --main-color: rgba(0, 204, 20, 1);
+    --dark-color: rgba(0, 204, 20, 0.5);
+    --text-shadow: rgba(0, 0, 0, 1);
+  }
+}
+:root.theme-dark {
+  --back-color: #000;
+  --from-color: rgba(0, 127, 12, 1);
+  --before-color: rgba(0, 67, 6, 1);
+  --main-color: rgba(0, 204, 20, 1);
+  --dark-color: rgba(0, 204, 20, 0.5);
+  --text-shadow: rgba(0, 0, 0, 1);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --back-color: #fff;
+    --from-color: rgba(231, 231, 231, 1);
+    --before-color: rgba(26, 26, 26, 1);
+    --main-color: #000;
+    --dark-color: rgba(0, 0, 0, 1);
+    --text-shadow: rgba(255, 255, 255, 1);
+  }
+}
+
+:root.theme-light {
+  --back-color: #fff;
+  --from-color: rgba(231, 231, 231, 1);
+  --before-color: rgba(26, 26, 26, 1);
+  --main-color: #000;
+  --dark-color: rgba(0, 0, 0, 1);
+  --text-shadow: rgba(255, 255, 255, 1);
+}

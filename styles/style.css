@@ -17,4 +17,350 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  color: var(--main-color);
+  margin: 100px 370px 105px;
+  background-image: repeating-linear-gradient(
+      90deg,
+      var(--back-color) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      var(--back-color) 0 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(var(--from-color), var(--before-color));
+}
+.header {
+  border: 2px solid var(--main-color);
+  gap: 25px;
+  background-color: var(--back-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Press Start 2P";
+  font-weight: 400;
+}
+.header__logo {
+  text-align: center;
+}
+.header__logo-text {
+  font-size: 65px;
+  line-height: 65px;
+  padding-block-start: 136px;
+  padding-block-end: 20px;
+}
+.header__logo-desecription {
+  font-size: 23px;
+  line-height: 23px;
+  text-transform: uppercase;
+}
+.header__theme-menu {
+  padding-inline-start: 11px;
+  padding-block-end: 20px;
+  position: relative;
+}
+.theme-menu__list {
+  padding-inline-start: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.theme-menu__item {
+  font-size: 12px;
+  line-height: 14px;
+}
+.theme-menu__button:disabled:before {
+  content: "▶";
+  position: absolute;
+  left: 11px;
+  animation: animpointer 0.5s ease-in-out infinite;
+}
+.theme-menu__button:disabled {
+  opacity: 0.6;
+}
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.4s ease-in-out;
+}
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  transition: width 0.3s;
+}
+.theme-menu__button:focus-visible:after {
+  width: 100%;
+}
+.theme-menu__button:hover:after {
+  scale: 1;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:focus-visible:focus {
+  outline: none;
+}
+
+.theme-menu__button {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  position: relative;
+  padding-block-start: 100px;
+  font-family: "Inter";
+}
+.main__cells {
+  background-color: var(--back-color);
+  border: 2px solid var(--main-color);
+}
+.main__cells-title {
+  border-block-end: 2px solid var(--main-color);
+  padding: 3px 10px;
+  font-weight: 785;
+  padding-block-end: 5px;
+  font-size: 18px;
+  line-height: 22px;
+}
+.main__cells-img {
+  border-block-end: 2px solid var(--main-color);
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+}
+.main__cells-button-img {
+  cursor: pointer;
+  block-size: 27px;
+  inline-size: 24px;
+}
+.main__cells-text {
+  padding: 20px 0 31px;
+  margin: 0 auto;
+  inline-size: 646px;
+  font-size: 18px;
+  font-weight: 465;
+  line-height: 21px;
+}
+.main__cells-mark {
+  position: relative;
+}
+.main__cells-button {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid var(--main-color);
+  padding: 10px 35px;
+}
+.main__cells-content {
+  margin-inline-end: 25px;
+  margin-block-end: 21px;
+  display: flex;
+  align-items: flex-start;
+  float: inline-end;
+  gap: 6px;
+}
+.main__cells-button:focus {
+  box-shadow: 3px 2px 2px var(--main-color);
+}
+.main__cells-button-text {
+  font-family: "Press Start 2P";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 13px;
+}
+.main__cells-button:hover {
+  transition: transform 0.3s;
+  transform: translateX(0);
+}
+
+.main__cells-button:hover .main__cells-button-text {
+  mix-blend-mode: hard-light;
+  color: var(--back-color);
+  z-index: 2;
+  transition: color 0.3s;
+}
+
+.main__cells-button:hover::before {
+  transition: transform 0.3s;
+  transform: translateX(0);
+  background-color: var(--main-color);
+}
+
+.main__cells-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.main__cells-watermark {
+  z-index: 1;
+  font-family: "Press Start 2P";
+  text-shadow: -0 -1px 0 var(--text-shadow);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  color: var(--dark-color);
+}
+.main__cells-text-space {
+  padding: 0 25px 22px;
+  font-size: 18px;
+  font-weight: 465;
+  line-height: 21px;
+}
+.card__icon-button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.footer {
+  padding-block-start: 50px;
+}
+.footer__button {
+  inline-size: 346px;
+  cursor: pointer;
+  gap: 8px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  font-family: "Press Start 2P";
+  background: transparent;
+  border: 2px solid var(--main-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 13px;
+  padding: 15px 21px 14px;
+  background-color: var(--back-color);
+}
+
+.footer__dialog-text {
+  color: var(--main-color);
+  font-family: "Press Start 2P";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+.footer__dialog-button {
+  cursor: pointer;
+  margin: 0 0 30px 30px;
+  display: flex;
+  padding: 0;
+  background: transparent;
+  border: 2px solid var(--main-color);
+}
+.footer__dialog-button-text {
+  font-family: "Press Start 2P";
+  color: var(--main-color);
+  padding: 12.5px 132.5px;
+}
+.footer__dialog-title {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-block-end: 30px;
+}
+.footer__button-img {
+  max-inline-size: 21px;
+  color: var(--main-color);
+}
+.footer__dialog {
+  overflow: hidden;
+  border: 2px solid var(--main-color);
+  background-color: var(--back-color);
+  max-block-size: 196px;
+  max-inline-size: 357px;
+}
+.footer__dialog-img {
+  color: var(--main-color);
+  max-inline-size: 39px;
+}
+/* filter */
+.filter-gray {
+  filter: grayscale(80%);
+}
+.filter-sat {
+  filter: saturate(300%);
+}
+.filter-inv {
+  filter: invert(89%);
+}
+.filter-hue {
+  filter: hue-rotate(30deg);
+}
+.filter-mul {
+  filter: grayscale(50%) hue-rotate(80deg) blur(2px);
+}
+.filter-blur {
+  filter: blur(10px);
+}
+.filter-sep {
+  filter: sepia(72%);
+}
+.like-icon {
+  block-size: 39px;
+  inline-size: 39px;
+}
+/* адаптив */
+@media (width <= 375px) {
+  .page {
+    margin: 102px 0 100px;
+  }
+  .header__logo-text {
+    padding-block-start: 120px;
+    font-size: 49px;
+    line-height: 49px;
+  }
+  .header__logo-desecription {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .theme-menu__item {
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .theme-menu__list {
+    gap: 10px;
+  }
+  .main {
+    padding-block-start: 105px;
+    gap: 53px;
+  }
+  .main__cells-text {
+    padding: 20px 0 28px;
+    inline-size: 317px;
+    margin: 0 auto;
+  }
+  .main__cells-watermark {
+    top: 20px;
+    right: 10px;
+  }
+  .footer__button {
+    flex-direction: column;
+    inline-size: auto;
+    padding-block-start: 15px;
+  }
+  .footer__button-img {
+    max-inline-size: 28px;
+  }
 }
