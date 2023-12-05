@@ -15,10 +15,11 @@
 */
 
 .page {
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   color: var(--main-color);
-  margin: 100px 370px 105px;
+  margin: 100px 0 105px;
   background-image: repeating-linear-gradient(
       90deg,
       var(--back-color) 0 2px,
@@ -30,30 +31,34 @@
       transparent 2px 4px
     ),
     linear-gradient(var(--from-color), var(--before-color));
+  font-variation-settings: "wght" var(--page-weight, 400);
 }
 .header {
+  max-inline-size: 696px;
+  margin: auto;
   border: 2px solid var(--main-color);
   gap: 25px;
   background-color: var(--back-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Press Start 2P";
+  font-family: var(--p2p-text);
   font-weight: 400;
 }
 .header__logo {
   text-align: center;
+  padding-block-start: 136px;
 }
 .header__logo-text {
-  font-size: 65px;
+  text-decoration: none;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: 65px;
-  padding-block-start: 136px;
-  padding-block-end: 20px;
 }
 .header__logo-desecription {
-  font-size: 23px;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   line-height: 23px;
   text-transform: uppercase;
+  padding-block-start: 20px;
 }
 .header__theme-menu {
   padding-inline-start: 11px;
@@ -64,10 +69,10 @@
   padding-inline-start: 11px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 11px;
 }
 .theme-menu__item {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 14px;
 }
 .theme-menu__button:disabled:before {
@@ -103,8 +108,12 @@
   transition: opacity 0.3s ease;
 }
 
-.theme-menu__button:focus-visible:focus {
+.theme-menu__button:focus-visible {
   outline: none;
+}
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
 }
 
 .theme-menu__button {
@@ -115,12 +124,14 @@
   cursor: pointer;
 }
 .main {
+  max-inline-size: 700px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 50px;
   position: relative;
   padding-block-start: 100px;
-  font-family: "Inter";
+  font-family: var(--inter-text);
 }
 .main__cells {
   background-color: var(--back-color);
@@ -129,7 +140,7 @@
 .main__cells-title {
   border-block-end: 2px solid var(--main-color);
   padding: 3px 10px;
-  font-weight: 785;
+  font-weight: var(--cellstitle-weight);
   padding-block-end: 5px;
   font-size: 18px;
   line-height: 22px;
@@ -146,11 +157,9 @@
   inline-size: 24px;
 }
 .main__cells-text {
-  padding: 20px 0 31px;
-  margin: 0 auto;
-  inline-size: 646px;
+  padding: 20px 25px 31px;
   font-size: 18px;
-  font-weight: 465;
+  font-weight: var(--cells-text);
   line-height: 21px;
 }
 .main__cells-mark {
@@ -176,7 +185,7 @@
   box-shadow: 3px 2px 2px var(--main-color);
 }
 .main__cells-button-text {
-  font-family: "Press Start 2P";
+  font-family: var(--p2p-text);
   font-size: 14px;
   font-weight: 400;
   line-height: 13px;
@@ -212,7 +221,7 @@
 
 .main__cells-watermark {
   z-index: 1;
-  font-family: "Press Start 2P";
+  font-family: var(--p2p-text);
   text-shadow: -0 -1px 0 var(--text-shadow);
   font-size: 14px;
   font-weight: 400;
@@ -225,7 +234,7 @@
 .main__cells-text-space {
   padding: 0 25px 22px;
   font-size: 18px;
-  font-weight: 465;
+  font-weight: var(--cells-text);
   line-height: 21px;
 }
 .card__icon-button {
@@ -237,30 +246,66 @@
   padding-block-start: 50px;
 }
 .footer__button {
+  overflow: hidden;
   inline-size: 346px;
   cursor: pointer;
   gap: 8px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  font-family: "Press Start 2P";
   background: transparent;
   border: 2px solid var(--main-color);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 13px;
   padding: 15px 21px 14px;
   background-color: var(--back-color);
 }
+.footer__button:hover {
+  transition: transform 0.3s;
+  transform: translateX(0);
+}
 
+.footer__button:hover .footer__button-text {
+  color: var(--back-color);
+  z-index: 2;
+  transition: color 0.3s;
+}
+.footer__button:hover .footer__button-img {
+  fill: var(--back-color);
+  z-index: 2;
+  transition: color 0.3s;
+}
+.footer__button:hover::before {
+  transition: transform 0.3s;
+  transform: translateX(0);
+  background-color: var(--main-color);
+}
+
+.footer__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+.footer__button-text {
+  text-decoration: none;
+  font-family: var(--p2p-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 13px;
+}
 .footer__dialog-text {
   color: var(--main-color);
-  font-family: "Press Start 2P";
+  font-family: var(--p2p-text);
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
 }
 .footer__dialog-button {
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
   margin: 0 0 30px 30px;
   display: flex;
@@ -268,8 +313,35 @@
   background: transparent;
   border: 2px solid var(--main-color);
 }
+.footer__dialog-button:hover {
+  transition: transform 0.3s;
+  transform: translateX(0);
+}
+
+.footer__dialog-button:hover .footer__dialog-button-text {
+  color: var(--back-color);
+  z-index: 2;
+  transition: color 0.3s;
+}
+
+.footer__dialog-button:hover::before {
+  transition: transform 0.3s;
+  transform: translateX(0);
+  background-color: var(--main-color);
+}
+
+.footer__dialog-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
 .footer__dialog-button-text {
-  font-family: "Press Start 2P";
+  font-family: var(--p2p-text);
   color: var(--main-color);
   padding: 12.5px 132.5px;
 }
@@ -282,17 +354,18 @@
 }
 .footer__button-img {
   max-inline-size: 21px;
-  color: var(--main-color);
+  fill: var(--main-color);
 }
 .footer__dialog {
-  overflow: hidden;
   border: 2px solid var(--main-color);
   background-color: var(--back-color);
-  max-block-size: 196px;
   max-inline-size: 357px;
 }
+.footer__dialog[open]::backdrop{
+  opacity: 0.75;
+  background: var(--back-color, #000000);
+}
 .footer__dialog-img {
-  color: var(--main-color);
   max-inline-size: 39px;
 }
 /* filter */
@@ -321,19 +394,43 @@
   block-size: 39px;
   inline-size: 39px;
 }
+@supports (
+  (-webkit-text-stroke: 1px var(--back-color, #000)) or
+    (text-stroke: 1px var(--back-color, #000))
+) {
+  .main__cells-button:hover .main__cells-button-text {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--back-color, #000);
+    text-stroke: 1px var(--back-color, #000);
+  }
+  .footer__dialog-button:hover .footer__dialog-button-text {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--back-color, #000);
+    text-stroke: 1px var(--back-color, #000);
+  }
+  .footer__button:hover .footer__button-img {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--back-color, #000);
+    text-stroke: 1px var(--back-color, #000);
+  }
+}
 /* адаптив */
 @media (width <= 375px) {
   .page {
-    margin: 102px 0 100px;
+    margin: 100px 0 100px;
+  }
+  .header__logo{
+    padding-block-start: 120px;
   }
   .header__logo-text {
-    padding-block-start: 120px;
-    font-size: 49px;
     line-height: 49px;
   }
   .header__logo-desecription {
     font-size: 14px;
     line-height: 14px;
+  }
+  .main__cells-title{
+    max-inline-size: 351px;
   }
   .theme-menu__item {
     font-size: 13px;
@@ -348,7 +445,7 @@
   }
   .main__cells-text {
     padding: 20px 0 28px;
-    inline-size: 317px;
+    max-inline-size: 317px;
     margin: 0 auto;
   }
   .main__cells-watermark {
@@ -364,3 +461,4 @@
     max-inline-size: 28px;
   }
 }
+

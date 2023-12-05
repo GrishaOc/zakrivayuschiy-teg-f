@@ -12,6 +12,11 @@
     --main-color: rgba(0, 204, 20, 1);
     --dark-color: rgba(0, 204, 20, 0.5);
     --text-shadow: rgba(0, 0, 0, 1);
+    --inter-text: "Inter", sans-serif;
+    --p2p-text: 'PressStart2P', fantasy;
+    --cellstitle-weight: 700;
+    --cells-text: 400;
+    --page-weight: 400;
   }
 }
 :root.theme-dark {
@@ -21,6 +26,11 @@
   --main-color: rgba(0, 204, 20, 1);
   --dark-color: rgba(0, 204, 20, 0.5);
   --text-shadow: rgba(0, 0, 0, 1);
+  --inter-text: 'Inter', sans-serif;
+  --p2p-text: 'PressStart2P', fantasy;
+  --cellstitle-weight: 700;
+  --cells-text: 400;
+  --page-weight: 400;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -30,6 +40,11 @@
     --main-color: #000;
     --dark-color: rgba(0, 0, 0, 1);
     --text-shadow: rgba(255, 255, 255, 1);
+    --inter-text: 'Inter', sans-serif;
+    --p2p-text: 'PressStart2P', fantasy;
+    --cellstitle-weight: 785;
+    --cells-text: 465;
+    --page-weight: 400;
   }
 }
 
@@ -40,4 +55,9 @@
   --main-color: #000;
   --dark-color: rgba(0, 0, 0, 1);
   --text-shadow: rgba(255, 255, 255, 1);
+  --inter-text: 'Inter', sans-serif;
+  --p2p-text: 'PressStart2P', fantasy;
+  --cellstitle-weight: 785;
+  --cells-text: 465;
+  --page-weight: 400;
 }

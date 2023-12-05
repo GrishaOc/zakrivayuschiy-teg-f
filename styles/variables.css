@@ -7,4 +7,9 @@
   --dark-color: rgba(0, 204, 20, 0.5);
   --text-shadow: rgba(0, 0, 0, 1);
   --transition: all 0.3s ease 0s;
+  --inter-text: "Inter", sans-serif;
+  --p2p-text: 'PressStart2P', fantasy;
+  --cellstitle-weight: 700;
+  --cells-text: 400;
+  --page-weight: 400;
 }
