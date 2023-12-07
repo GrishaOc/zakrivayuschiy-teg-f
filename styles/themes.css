@@ -14,8 +14,8 @@
     --text-shadow: rgba(0, 0, 0, 1);
     --inter-text: "Inter", sans-serif;
     --p2p-text: 'PressStart2P', fantasy;
-    --cellstitle-weight: 700;
-    --cells-text: 400;
+    --cellstitle-weight: 785;
+    --cells-text: 465;
     --page-weight: 400;
   }
 }
@@ -28,8 +28,8 @@
   --text-shadow: rgba(0, 0, 0, 1);
   --inter-text: 'Inter', sans-serif;
   --p2p-text: 'PressStart2P', fantasy;
-  --cellstitle-weight: 700;
-  --cells-text: 400;
+  --cellstitle-weight: 785;
+  --cells-text: 465;
   --page-weight: 400;
 }
 @media (prefers-color-scheme: light) {
@@ -42,8 +42,8 @@
     --text-shadow: rgba(255, 255, 255, 1);
     --inter-text: 'Inter', sans-serif;
     --p2p-text: 'PressStart2P', fantasy;
-    --cellstitle-weight: 785;
-    --cells-text: 465;
+    --cellstitle-weight: 700;
+    --cells-text: 400;
     --page-weight: 400;
   }
 }
@@ -57,7 +57,7 @@
   --text-shadow: rgba(255, 255, 255, 1);
   --inter-text: 'Inter', sans-serif;
   --p2p-text: 'PressStart2P', fantasy;
-  --cellstitle-weight: 785;
-  --cells-text: 465;
+  --cellstitle-weight: 700;
+  --cells-text: 400;
   --page-weight: 400;
 }
